@@ -6,6 +6,15 @@
 // it should run the callback on each element in the array.
 // ----------------------------
 
+function forEach(anArray,aFunction){
+
+	for(var i = 0; i < anArray.length; i++){
+
+		aFunction(anArray[i])
+
+	}
+}
+
 //  Part II
 // ----------------------------
 // write your own map() function.
@@ -14,6 +23,18 @@
 // original has been transformed by the callback. .
 // ----------------------------
 
+function map(anArray,aFunction){
+	
+	var newArray = []
+
+	for(var i = 0; i < anArray.length; i++){
+
+		newArray.push(aFunction(anArray[i]))
+
+	}
+
+	return newArray
+}
 
 //  Part III
 // ----------------------------
@@ -23,6 +44,21 @@
 // kept or excluded according to the callback. 
 // ----------------------------
 
+function filter(anArray,aFunction){
+
+	var newArray = []
+
+	for(var i = 0; i < anArray.length; i++){
+
+		if(aFunction(anArray[i])){
+
+			newArray.push(anArray[i])
+
+		}
+	}
+
+	return newArray
+}
 
 //  Part IV
 // ----------------------------
@@ -41,7 +77,17 @@
 
 // look at the tests for clarification.
 // ----------------------------
+// function reduce(anArray, aFunction, accum){
 
+function reduce(theArray,callBack,accum){
+
+	for(var i = 0; i < theArray.length; i++){
+
+		accum = callBack(accum, theArray[i])
+	}
+	
+	return accum
+}
 
 //  HARD MODE
 // ----------------------------
